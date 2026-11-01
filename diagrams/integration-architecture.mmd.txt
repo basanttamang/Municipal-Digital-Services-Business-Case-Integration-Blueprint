@@ -1,0 +1,26 @@
+flowchart TB
+    CITIZEN([Citizen])
+
+    subgraph CORE["Shared Core"]
+        CR[("Citizen Registry<br/>one verified record per citizen")]
+    end
+
+    subgraph SOURCE["Data Foundation — Project 2"]
+        BR[Birth Register<br/>cleaned and migrated]
+    end
+
+    subgraph FRONTLINE["Front-line Services"]
+        WAS[Ward Appointment System<br/>Project 1]
+        SIF[Sifaris Digital Letters<br/>Project 3]
+    end
+
+    subgraph EXTERNAL["External Parties"]
+        BANK[Banks and<br/>Receiving Offices]
+    end
+
+    BR -- "feeds clean,<br/>de-duplicated records" --> CR
+    WAS -- "looks up / creates<br/>citizen record" --> CR
+    SIF -- "looks up citizen,<br/>logs every letter" --> CR
+    CITIZEN -- books appointment --> WAS
+    CITIZEN -- requests letter --> SIF
+    SIF -- "QR verification" --> BANK

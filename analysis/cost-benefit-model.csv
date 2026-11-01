@@ -1,0 +1,15 @@
+Item,Value,Unit,Notes
+Annual ward office visits (all services),150000,visits/year,Baseline volume across the three front-line services
+Visits requiring a return trip (system down / officer absent / wrong room),20%,percent,Derived from Project 1 interview pain points P8-P10
+Visits requiring a return trip (count),30000,visits/year,150000 x 20%
+Time saved per avoided return trip,45,minutes,Travel + re-queueing time avoided when the shared registry prevents the trip
+Value of citizen time,150,NPR/hour,Conservative local daily-wage-based estimate
+Annual citizen time saved,22500,hours/year,30000 visits x 45 minutes / 60
+Annual citizen benefit (value of time saved),3375000,NPR/year,22500 hours x NPR 150/hour
+One-time integration build effort,48,person-weeks,Shared registry + integration work across the 3 systems
+Cost per person-week,50000,NPR/person-week,Blended analyst/developer rate
+One-time integration build cost,2400000,NPR,48 x 50000
+Annual operating cost (hosting, maintenance, support),600000,NPR/year,Estimated at 25% of build cost per year
+Net annual benefit (Year 1 after build),975000,NPR,3375000 - 2400000 (build cost absorbed in year 1)
+Net annual benefit (Year 2 onward),2775000,NPR,3375000 - 600000
+Simple payback period,10.7,months,2400000 / (3375000/12) months of citizen benefit to cover the one-time build cost
